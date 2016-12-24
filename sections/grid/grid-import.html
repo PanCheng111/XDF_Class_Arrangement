@@ -1,0 +1,81 @@
+<template class="task-template">
+  <section id="grid-import-section" class="section js-section u-category-windows">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+          导入小格汇总
+        </h1>
+        <h3> 在本页面导入 <code>Excel</code> 格式（xls/xlsx）的各期排班的小格汇总表。</h3>
+
+        <p>需要给出每期的小格汇总表，以sheet来区分，如<code>零期、一期、二期</code>这样的格式。在每个sheet中，以一个校区作为小格划分，个数和位置不限。</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="print-pdf-demo-toggle" class="js-container-target demo-toggle-button">Excel格式要求
+          <div class="demo-meta u-avoid-clicks">支持: xls, xlsx </div>
+        </button>
+        <div class="demo-box">
+          <p>这里给出对导入文件的格式示例，只有满足如下示例的Excel文件才能被本应用正确识别。</p>
+          <table class="table">
+            <tr>
+              <td></td><td colspan="6">海淀桥</td>
+            </tr>
+            <tr>
+              <td></td><td>301</td><td>302</td><td>303</td><td>304</td><td>401</td><td>402</td>
+            </tr>
+            <tr>
+              <td></td><td>54</td><td>52</td><td>46</td><td>47</td><td>108</td><td>46</td>
+            </tr>
+            <tr>
+              <td>上午</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td>
+            </tr>
+            <tr>
+              <td>9:30-11:30</td><td>待定</td><td>待定</td><td>待定</td><td>张三</td><td>李四</td><td>待定</td>
+            </tr>
+            <tr>
+              <td>中午</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td>
+            <tr>
+              <td>12:30-14:30</td><td>待定</td><td>待定</td><td>待定</td><td>张三</td><td>李四</td><td>待定</td>
+            </tr>
+            <tr>
+              <td>下午</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td>
+            </tr>
+            <tr>
+              <td>15:30-17:30</td><td>待定</td><td>待定</td><td>待定</td><td>张三</td><td>李四</td><td>待定</td>
+            </tr>
+            <tr>
+              <td>晚上</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td><td>高一尖子数学暑假班（精英班）</td>
+            </tr>
+            <tr>
+              <td>18:30-20:30</td><td>待定</td><td>待定</td><td>待定</td><td>张三</td><td>李四</td><td>待定</td>
+            </tr>
+          </table>
+          <p>注：每个小格以均为11行为标准，列数不限，位置不限。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="print-pdf-demo-toggle" class="js-container-target demo-toggle-button">导入Excel数据
+          <div class="demo-meta u-avoid-clicks">支持: xls, xlsx </div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="select-grid-import">点我导入数据</button>
+            <span class="demo-response is-selectable" id="selected-grid-import-file"></span>
+          </div>
+          <div id = 'displayed-grid-import-file'> </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      require('./renderer-process/grid/grid-import');
+    </script>
+
+  </section>
+</template>

@@ -1,0 +1,63 @@
+<template class="task-template">
+  <section id="detail-generate-section" class="section js-section u-category-system">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-system"></use></svg>
+          导出设班大表
+        </h1>
+        <h3> 在本页面导出 <code>Excel</code> 格式（xls/xlsx）的所有课程对应的设班大表。</h3>
+
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="print-pdf-demo-toggle" class="js-container-target demo-toggle-button">Excel格式样式
+          <div class="demo-meta u-avoid-clicks">支持: xls, xlsx </div>
+        </button>
+        <div class="demo-box">
+          <p>本应用导出的Excel文档是如下格式：</p>
+          <table class="table">
+            <tr>
+              <td>班级编码</td><td>班级名称</td><td>老师</td><td>上课地点</td><td>教室座位数</td><td>上课时间</td>
+              <td>正常人数</td><td>最大人数</td><td>开课日期</td><td>结课日期</td><td>班级类型(教务填写)"</td><td>报到日期</td>
+              <td>报到情况</td><td>课次</td><td>总课时</td><td>学费</td><td>备注</td>
+            </tr>
+            <tr>
+              <td>123</td><td>高二尖子数学暑假班（理科）</td><td>张三</td><td>昌平新政府街校区406教室</td><td>56</td><td>9:30-11:30</td>
+              <td>25</td><td>56</td><td></td><td></td><td></td><td></td>
+              <td>开课当天凭听课证领取教材，课程中包含家长会</td><td>18</td><td>22.5</td><td>1920</td><td></td>	
+            </tr>
+            <tr>
+              <td>456</td><td>高二尖子数学暑假班（理科）</td><td>李四</td><td>昌平新政府街校区407教室</td><td>56</td><td>9:30-11:30</td>
+              <td>25</td><td>56</td><td></td><td></td><td></td><td></td>
+              <td>开课当天凭听课证领取教材，课程中包含家长会</td><td>18</td><td>22.5</td><td>1920</td><td></td>	
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="print-pdf-demo-toggle" class="js-container-target demo-toggle-button">导出设班大表
+          <div class="demo-meta u-avoid-clicks">支持: Win, OS X, Linux | 格式: xls, xlsx</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="select-detail-generate">点我导出数据</button>
+            <span class="demo-response is-selectable" id="selected-detail-generate-file"></span>
+          </div>
+          <p>请您指定一个文件夹，本应用会将设班大表写入到该文件夹。</p>
+          <div id = 'displayed-detail-generate-file'> </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      require('./renderer-process/detail/detail-generate');
+    </script>
+
+  </section>
+</template>
